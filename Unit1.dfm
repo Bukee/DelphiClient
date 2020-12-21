@@ -34,13 +34,6 @@
     Height = 13
     Caption = #1055#1072#1088#1086#1083#1100
   end
-  object Label3: TLabel
-    Left = 152
-    Top = 185
-    Width = 27
-    Height = 13
-    Caption = 'token'
-  end
   object Edit1: TEdit
     Left = 32
     Top = 56
@@ -62,28 +55,13 @@
     Height = 21
     TabOrder = 2
   end
-  object Edit4: TEdit
-    Left = 32
-    Top = 182
-    Width = 89
-    Height = 21
-    TabOrder = 3
-  end
   object Button1: TButton
-    Left = 344
-    Top = 34
+    Left = 336
+    Top = 74
     Width = 97
     Height = 65
     Caption = 'OK'
-    TabOrder = 4
+    TabOrder = 3
     OnClick = Button1Click
-  end
-  object Button2: TButton
-    Left = 344
-    Top = 136
-    Width = 97
-    Height = 73
-    Caption = 'NO'
-    TabOrder = 5
   end
 end

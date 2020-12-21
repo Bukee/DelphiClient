@@ -27,15 +27,8 @@ object Form4: TForm4
     Height = 13
     Caption = 'id '#1086#1087#1077#1088#1072#1090#1086#1088#1072
   end
-  object Label3: TLabel
-    Left = 296
-    Top = 32
-    Width = 66
-    Height = 13
-    Caption = #1089#1091#1084#1084#1072' '#1079#1072#1082#1072#1079#1072
-  end
   object Label4: TLabel
-    Left = 392
+    Left = 320
     Top = 32
     Width = 30
     Height = 13
@@ -64,18 +57,11 @@ object Form4: TForm4
     Height = 21
     TabOrder = 2
   end
-  object Edit3: TEdit
-    Left = 296
-    Top = 64
-    Width = 73
-    Height = 21
-    TabOrder = 3
-  end
   object Edit4: TEdit
-    Left = 392
+    Left = 320
     Top = 64
     Width = 89
     Height = 21
-    TabOrder = 4
+    TabOrder = 3
   end
 end

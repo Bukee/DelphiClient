@@ -12,11 +12,9 @@ type
     Button1: TButton;
     Edit1: TEdit;
     Edit2: TEdit;
-    Edit3: TEdit;
     Edit4: TEdit;
     idC: TLabel;
     idOp: TLabel;
-    Label3: TLabel;
     Label4: TLabel;
     procedure Button1Click(Sender: TObject);
   private

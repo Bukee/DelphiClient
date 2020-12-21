@@ -62,8 +62,8 @@ type
     procedure ordersUpdate(Sender:TObject;id:string);
     procedure ordersOR(Sender:TObject;id:string);
 
-    function  ordersInfoList(Sender:TObject):TJSONObject;
-    function  ordersInfoId (Sender:TObject):TJSONObject;
+    function  ordersInfoList(Sender:TObject;id:string):TJSONObject;
+    function  ordersInfoId (Sender:TObject;id:string):TJSONObject;
     procedure ordersInfoAdd (Sender:TObject);
     procedure ordersInfoDelete(Sender:TObject);
 
@@ -136,7 +136,7 @@ end;
 //меню
  procedure TTestClientForm.Menu(Sender: TObject);
  var JSON1,JSON2:TJSONObject;
- var I,K:integer;
+ var I,K,R:integer;
  var JSONA1,JSONA2: TJSONArray;
  var url,massage:string;
  var mas:array[0..4] of string[30];
@@ -152,24 +152,30 @@ begin
     url:= '/orders/list/';
     massage:=URLOut(Sender,url,JSON2.ToString());
     JSONA2:= TJSONObject.ParseJSONValue(massage) as TJSONArray;
-
+    //Timer1.Enabled:=false;
+    StringGrid1.RowCount:= 20;
+    StringGrid1.ColCount:= 20;
     for I := 0 to JSONA1.Size() - 1 do begin
       StringGrid1.RowHeights[I+1]:=100;
       StringGrid1.ColWidths[1]:= 150;
       JSON1:= JSONA1[I] as TJSONObject;
       mas[0]:= JSON1.Values['id'].Value;
       mas[1]:= JSON1.Values['name'].Value;
+      R:=1;
       for K := 0 to JSONA2.Size() - 1 do begin
         JSON2:= JSONA2[K] as TJSONObject;
         mas[2]:= JSON2.Values['courierid'].value;
-          if mas[2] = mas[0] then begin
-          StringGrid1.ColWidths[K+1]:= 150;
+        if mas[2] = mas[0] then begin
+          if StringGrid1.ColCount = R  then StringGrid1.ColCount:=StringGrid1.ColCount + 1;
+          StringGrid1.ColWidths[R]:= 150;
           mas[3]:=JSON2.Values['id'].value;
           mas[4]:=JSON2.Values['operatorid'].value;
-          StringGrid1.Cells[K + 1,I+1]:= 'id ' + mas[3] + ' operatorid ' +  mas[4];
+          StringGrid1.Cells[R,I+1]:='id ' + mas[3] + ' operatorid ' +  mas[4];
+          R:=R+1;
         end;
       end;
-      StringGrid1.Cells[1,I+1]:= 'id ' + mas[0] + ' Имя ' +  mas[1];
+      if I + 1 = StringGrid1.RowCount then  StringGrid1.RowCount:= StringGrid1.RowCount + 1;
+      StringGrid1.Cells[1,I+1]:='id ' + mas[0] + ' Имя ' +  mas[1];
     end;
 
     
@@ -179,26 +185,40 @@ end;
 
 procedure TTestClientForm.MenuOrders(Sender: TObject);
 var JSON:TJSONObject;
- var I:integer;
+ var I,R:integer;
  var JSONA: TJSONArray;
  var id,url,massage,massage1,massage2:string;
 begin
     TableClear(Sender,StringGrid2);
-    StringGrid2.Cells[1,0]:= 'Заказы';
+    StringGrid2.ColWidths[1]:=250;
+    StringGrid2.Cells[1,0]:= 'Нераспределенные заказы';
     JSON:= ordersList(Sender);
     url:='/orders/list/';
     massage:=URLOut(Sender,url,JSON.ToString());
     JSONA:= TJSONObject.ParseJSONValue(massage) as TJSONArray;
-
+    R:=1;
+    StringGrid2.RowCount:= 20;
+    StringGrid2.ColCount := 20;
     for I := 0 to JSONA.Size() - 1 do begin
-     StringGrid2.RowHeights[I+1]:=100;
-     StringGrid2.ColWidths[1]:= 250;
      JSON:=JSONA[I] as TJSONObject;
      id:=JSON.Values['id'].Value;
      massage1:=JSON.Values['courierid'].Value;
      massage2:=JSON.Values['operatorid'].Value;
-     StringGrid2.Cells[1,I+1]:='id ' + id + ' id курьера ' +  massage1
-       + ' id оператора ' + massage2;
+     //if id = '6' then  RequestMemo.Lines.Add(JSON.ToString());
+       if massage1 = '' then begin
+       if StringGrid2.RowCount = R  then StringGrid2.ColCount:=StringGrid2.ColCount + 1;
+       StringGrid2.RowHeights[R]:=100;
+       StringGrid2.ColWidths[1]:= 250;
+       StringGrid2.Cells[1,R]:= 'id ' + id + ' id оператора ' + massage2;
+       massage1:=JSON.Values['delivery_address'].Value;
+       StringGrid2.Cells[2,R]:= massage1;
+       {JSON:=ordersInfoList(Sender,id);
+       url:='/order-info/list/';
+       massage:=URLOut(Sender,url,JSON.ToString());
+       JSON:= TJSONObject.ParseJSONValue(massage) as TJSONObject;
+       RequestMemo.Lines.Add(JSON.ToString()); }
+       R:=R+1;
+       end;
     end;
 end;
 
@@ -248,14 +268,12 @@ procedure TTestClientForm.couriersAdd(Sender: TObject);
     massage[0]:= form1.edit1.text;
     massage[1]:= form1.edit2.text;
     massage[2]:= form1.edit3.text;
-    massage[3]:= form1.edit4.text;
     massage[4]:='0';
     JsonObject:= TJSONObject.Create;
     JsonObject.AddPair('name', massage[0])
           .AddPair('availability',massage[4])
           .AddPair('login', massage[1])
-          .AddPair('password', massage[2])
-          .AddPair('token', massage[3]);
+          .AddPair('password',massage[2]);
     url:= '/couriers/add/';
     URLOut(Sender,url,JsonObject.ToString());
 end;
@@ -283,7 +301,8 @@ end;
 procedure TTestClientForm.couriersOR(Sender: TObject;id:string);
 var A,B:boolean;
 begin
-    form6.showModal();
+     Timer1.Enabled:=false;
+     form6.showModal();
      A:=form6.RadioButton1.Checked;
      B:=form6.RadioButton2.Checked;
      if A and not(B) then couriersDelete(Sender,id);
@@ -299,15 +318,13 @@ var JsonObject: TJSONObject;
     massage[0]:= form1.edit1.text;
     massage[1]:= form1.edit2.text;
     massage[2]:= form1.edit3.text;
-    massage[3]:= form1.edit4.text;
     massage[4]:='0';
     JsonObject:= TJSONObject.Create;
     JsonObject.AddPair('id',id)
           .AddPair('name', massage[0])
           .AddPair('availability',massage[4])
           .AddPair('login', massage[1])
-          .AddPair('password', massage[2])
-          .AddPair('token', massage[3]);
+          .AddPair('password', massage[2])  ;
     url:= '/couriers/update/';
     URLOut(Sender,url,JsonObject.ToString());
 end;
@@ -445,9 +462,11 @@ end;
 procedure TTestClientForm.ordersOR(Sender: TObject; id: string);
 var A,B:boolean;
 begin
-    form6.showModal();
+     Timer1.Enabled:=false;
+     form6.showModal();
      A:=form6.RadioButton1.Checked;
      B:=form6.RadioButton2.Checked;
+     RequestMemo.Lines.Add(id);
      if A and not(B) then ordersDelete(Sender,id);
      if not(A) and B then ordersUpdate(Sender,id);
 end;
@@ -460,13 +479,11 @@ begin
      form4.showModal();
      massage[0]:=form4.edit1.Text;
      massage[1]:=form4.edit2.Text;
-     massage[2]:=form4.edit3.Text;
      massage[3]:=form4.edit4.text;
      JsonObject:= TJSONObject.Create;
      JsonObject.AddPair('id', id)
           .AddPair('courierid', massage[0])
           .AddPair('operatorid', massage[1])
-          .AddPair('total_summ', massage[2])
           .AddPair('delivery_address',massage[3]);
      url:='/orders/update/';
      URLOut(Sender,url,JsonObject.ToString());
@@ -511,23 +528,19 @@ end;
 
 
 
-function TTestClientForm.ordersInfoId(Sender: TObject): TJSONObject;
+function TTestClientForm.ordersInfoId(Sender: TObject;id:string): TJSONObject;
 var JsonObject: TJSONObject;
 var massage:string;
 begin
-    form2.showModal();
-    massage:= form2.edit1.text;
     JsonObject:= TJSONObject.Create;
     JsonObject.AddPair('id', massage);
     ordersInfoId:= JsonObject;
 end;
 
-function TTestClientForm.ordersInfoList(Sender: TObject): TJSONObject;
+function TTestClientForm.ordersInfoList(Sender: TObject;id:string): TJSONObject;
 var JsonObject: TJSONObject;
 var massage:string;
 begin
-    form2.showModal();
-    massage:= form2.edit1.text;
     JsonObject:= TJSONObject.Create;
     JsonObject.AddPair('id', massage);
     ordersInfoList:= JsonObject;
@@ -665,6 +678,7 @@ begin
    if Acol = 1 then if massage = '' then couriersAdd(sender) else begin id:= mI(massage);couriersOR(sender,id); end
    else ;
 
+   Timer1.Enabled:=true;
    RequestMemo.Lines.Add(id);
    RequestMemo.Lines.Add(massage);
    end;
@@ -697,7 +711,7 @@ begin
    massage := StringGrid2.Cells[ACol,ARow];
    if Acol = 1 then if massage = '' then ordersAdd(sender) else begin id:= mI(massage);OrdersOR(sender,id); end
    else ;
-
+   Timer1.Enabled:=true;
    //RequestMemo.Lines.Add(id);
    RequestMemo.Lines.Add(massage);
 end;

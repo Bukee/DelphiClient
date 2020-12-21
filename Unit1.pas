@@ -11,13 +11,10 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
-    Edit4: TEdit;
     Button1: TButton;
-    Button2: TButton;
     Label1: TLabel;
     Логин: TLabel;
     Label2: TLabel;
-    Label3: TLabel;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
