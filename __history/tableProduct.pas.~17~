@@ -1,0 +1,77 @@
+unit tableProduct;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.Grids;
+
+type
+  TForm11 = class(TForm)
+    MainMenu1: TMainMenu;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    StringGrid1: TStringGrid;
+    procedure ADD(Sender: TObject);
+    procedure ORO(Sender: TObject);
+    procedure exit(Sender: TObject);
+    procedure StringGrid1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+  New:boolean;
+  Add_operators:boolean;
+    OR_operators:boolean;
+    name:string;
+    price,id:string;
+    { Public declarations }
+  end;
+
+var
+  Form11: TForm11;
+
+implementation
+
+{$R *.dfm}
+
+uses TestClientUnit;
+
+procedure TForm11.exit(Sender: TObject);
+begin
+      close();
+end;
+
+procedure TForm11.FormShow(Sender: TObject);
+begin
+New:=false;
+end;
+
+procedure TForm11.ADD(Sender: TObject);
+var s:string;
+begin
+  Add_operators:=true;
+end;
+
+procedure TForm11.ORO(Sender: TObject);
+begin
+  OR_operators:=true;
+end;
+
+procedure TForm11.StringGrid1MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+var massage:string;
+  var id1:string;
+  var ACol, ARow: integer;
+
+
+begin
+   StringGrid1.MouseToCell(X, Y, ACol, ARow);
+   id:= StringGrid1.Cells[ACol,ARow];
+   name := StringGrid1.Cells[ACol + 1,ARow];
+   price:= StringGrid1.Cells[ACol + 2,ARow];
+   if New then begin New:= false ;close();end;
+end;
+
+end.

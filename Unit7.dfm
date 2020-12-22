@@ -32,7 +32,7 @@ object Form7: TForm7
     Top = 110
     Width = 113
     Height = 41
-    Caption = 'Button1'
+    Caption = #1042#1086#1081#1090#1080
     TabOrder = 0
     OnClick = Button1Click
   end
@@ -42,6 +42,7 @@ object Form7: TForm7
     Width = 145
     Height = 21
     TabOrder = 1
+    Text = 'Admin'
   end
   object Edit2: TEdit
     Left = 248
@@ -49,5 +50,14 @@ object Form7: TForm7
     Width = 145
     Height = 21
     TabOrder = 2
+    Text = 'Admin'
+  end
+  object IPAdrees: TEdit
+    Left = 176
+    Top = 120
+    Width = 97
+    Height = 21
+    TabOrder = 3
+    Text = '127.0.0.1'
   end
 end

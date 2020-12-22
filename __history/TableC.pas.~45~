@@ -1,0 +1,72 @@
+unit TableC;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, Vcl.Menus, Data.DB, System.JSON,
+  Vcl.Grids, Vcl.ExtCtrls ;
+
+type
+  TForm8 = class(TForm)
+    StringGrid1: TStringGrid;
+    Timer1: TTimer;
+    procedure StringGrid1Click(Sender: TObject);
+    procedure StringGrid1MouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+  private
+    { Private declarations }
+  public
+  id:string;
+    { Public declarations }
+  end;
+
+var
+  Form8: TForm8;
+
+implementation
+
+{$R *.dfm}
+
+uses TestClientUnit;
+
+
+
+procedure TForm8.StringGrid1Click(Sender: TObject);
+
+    end;
+
+
+procedure TForm8.StringGrid1MouseUp(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+   var massage:string;
+  var id1:string;
+  var ACol, ARow: integer;
+
+  function mI(var s1:string):string;
+  var a,i1:integer;
+  var s:string;
+  begin
+  s:=s1;
+  i1:=1;
+  while s[i1]<>'È' do begin
+     if s[i1] = 'd' then a:=i1+2;
+     i1:=i1+1;
+  end;
+  s:=copy(s,a,i1-a);
+  val(s,a,i1);
+  str(a,s);
+  mI:=s;
+  end;
+
+
+begin
+   StringGrid1.MouseToCell(X, Y, ACol, ARow);
+   massage := StringGrid1.Cells[ACol,ARow];
+   if Acol = 1 then if massage <> ''  then id1:= mI(massage);
+   id:=id1;
+end;
+
+end.

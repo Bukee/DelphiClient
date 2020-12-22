@@ -10,11 +10,7 @@ uses
 type
   TForm4 = class(TForm)
     Button1: TButton;
-    Edit1: TEdit;
-    Edit2: TEdit;
     Edit4: TEdit;
-    idC: TLabel;
-    idOp: TLabel;
     Label4: TLabel;
     procedure Button1Click(Sender: TObject);
   private

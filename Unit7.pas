@@ -13,6 +13,7 @@ type
     Edit1: TEdit;
     Label2: TLabel;
     Edit2: TEdit;
+    IPAdrees: TEdit;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }

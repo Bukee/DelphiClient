@@ -11,6 +11,7 @@ type
     RadioButton1: TRadioButton;
     RadioButton2: TRadioButton;
     Button1: TButton;
+    RadioButton3: TRadioButton;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
