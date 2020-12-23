@@ -14,15 +14,16 @@ uses
   TableOperators in 'TableOperators.pas' {Form9},
   TableOrdersInfo in 'TableOrdersInfo.pas' {Form10},
   tableProduct in 'tableProduct.pas' {Form11},
-  Unit12 in 'Unit12.pas' {Form12};
+  Unit12 in 'Unit12.pas' {Form12},
+  Unit13 in 'Unit13.pas' {Form13},
+  tableO in 'tableO.pas' {Form14};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.CreateForm(TForm7, Form7);
-
-  Application.MainFormOnTaskbar := True;
+  Application.MainFormOnTaskbar := True;
   Application.CreateForm(TTestClientForm, TestClientForm);
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TForm2, Form2);
@@ -35,5 +36,7 @@ begin
   Application.CreateForm(TForm10, Form10);
   Application.CreateForm(TForm11, Form11);
   Application.CreateForm(TForm12, Form12);
+  Application.CreateForm(TForm13, Form13);
+  Application.CreateForm(TForm14, Form14);
   Application.Run;
 end.

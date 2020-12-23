@@ -1,0 +1,314 @@
+object TestClientForm: TTestClientForm
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = #1050#1083#1080#1077#1085#1090' '#1076#1083#1103' '#1090#1077#1089#1090#1086#1074
+  ClientHeight = 575
+  ClientWidth = 832
+  Color = clBtnFace
+  DragMode = dmAutomatic
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnDragOver = Panel8DragOver
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object IPAddressLabel: TLabel
+    Left = 8
+    Top = 16
+    Width = 43
+    Height = 13
+    Caption = 'IP '#1072#1076#1088#1077#1089
+  end
+  object PortLabel: TLabel
+    Left = 183
+    Top = 16
+    Width = 24
+    Height = 13
+    Caption = #1087#1086#1088#1090
+  end
+  object URLLabel: TLabel
+    Left = 340
+    Top = 16
+    Width = 19
+    Height = 13
+    Caption = 'URL'
+  end
+  object Label1: TLabel
+    Left = 608
+    Top = 80
+    Width = 152
+    Height = 13
+    Caption = #1047#1072#1082#1072#1079#1099' ( '#1085#1077#1088#1072#1089#1087#1088#1077#1076#1077#1083#1077#1085#1085#1099#1077' )'
+  end
+  object Label2: TLabel
+    Left = 24
+    Top = 72
+    Width = 124
+    Height = 13
+    Caption = #1056#1072#1089#1087#1088#1077#1076#1077#1083#1077#1085#1080#1077' '#1079#1072#1082#1072#1079#1086#1074' '
+  end
+  object IPAddressEdit: TEdit
+    Left = 57
+    Top = 13
+    Width = 121
+    Height = 21
+    TabOrder = 0
+    Text = '127.0.0.1'
+  end
+  object PortEdit: TEdit
+    Left = 213
+    Top = 13
+    Width = 121
+    Height = 21
+    TabOrder = 1
+    Text = '80'
+  end
+  object URLEdit: TEdit
+    Left = 365
+    Top = 13
+    Width = 244
+    Height = 21
+    TabOrder = 2
+  end
+  object SendButton: TButton
+    Left = 8
+    Top = 40
+    Width = 609
+    Height = 25
+    Caption = #1054#1090#1087#1088#1072#1074#1080#1090#1100
+    TabOrder = 3
+    OnClick = SendButtonClick
+  end
+  object Memo1: TMemo
+    Left = 568
+    Top = 368
+    Width = 153
+    Height = 113
+    DragMode = dmAutomatic
+    Lines.Strings = (
+      'Memo1')
+    TabOrder = 4
+    OnDragDrop = Memo1DragDrop
+    OnDragOver = Memo1DragOver
+  end
+  object Panel1: TPanel
+    Left = 568
+    Top = 112
+    Width = 153
+    Height = 57
+    Caption = 'Panel1'
+    DragMode = dmAutomatic
+    ParentBackground = False
+    TabOrder = 5
+    OnMouseDown = Panel1MouseDown
+    OnMouseUp = Panel1MouseUp
+  end
+  object Panel2: TPanel
+    Left = 568
+    Top = 175
+    Width = 153
+    Height = 57
+    Caption = 'Panel2'
+    TabOrder = 6
+    OnMouseDown = Panel2MouseDown
+    OnMouseUp = Panel2MouseUp
+  end
+  object Panel3: TPanel
+    Left = 568
+    Top = 233
+    Width = 153
+    Height = 57
+    Caption = 'Panel3'
+    TabOrder = 7
+    OnMouseDown = Panel3MouseDown
+  end
+  object Panel4: TPanel
+    Left = 568
+    Top = 296
+    Width = 153
+    Height = 57
+    Caption = 'Panel4'
+    TabOrder = 8
+    OnMouseDown = Panel4MouseDown
+  end
+  object ScrollBar1: TScrollBar
+    Left = 727
+    Top = 112
+    Width = 18
+    Height = 241
+    Kind = sbVertical
+    Max = 5
+    PageSize = 0
+    TabOrder = 9
+    OnChange = ScrollBar1Change
+  end
+  object ScrollBar2: TScrollBar
+    Left = 8
+    Top = 104
+    Width = 17
+    Height = 279
+    Kind = sbVertical
+    PageSize = 0
+    TabOrder = 10
+    OnChange = ScrollBar2Change
+  end
+  object Panel5: TPanel
+    Left = 31
+    Top = 104
+    Width = 105
+    Height = 65
+    Caption = 'Panel5'
+    TabOrder = 11
+  end
+  object Panel6: TPanel
+    Left = 31
+    Top = 175
+    Width = 105
+    Height = 65
+    Caption = 'Panel6'
+    TabOrder = 12
+  end
+  object Panel7: TPanel
+    Left = 31
+    Top = 246
+    Width = 105
+    Height = 66
+    Caption = 'Panel7'
+    TabOrder = 13
+  end
+  object Panel8: TPanel
+    Left = 31
+    Top = 318
+    Width = 105
+    Height = 66
+    Caption = 'Panel8'
+    TabOrder = 14
+  end
+  object Panel9: TPanel
+    Left = 161
+    Top = 104
+    Width = 129
+    Height = 65
+    Caption = 'Panel9'
+    ParentBackground = False
+    TabOrder = 15
+    OnDragDrop = Panel5DragDrop
+    OnDragOver = Panel5DragOver
+  end
+  object Panel10: TPanel
+    Left = 296
+    Top = 103
+    Width = 129
+    Height = 65
+    Caption = 'Panel10'
+    ParentBackground = False
+    TabOrder = 16
+    OnDragDrop = Panel5DragDrop
+    OnDragOver = Panel5DragOver
+  end
+  object Panel11: TPanel
+    Left = 160
+    Top = 175
+    Width = 129
+    Height = 65
+    Caption = 'Panel11'
+    ParentBackground = False
+    TabOrder = 17
+    OnDragDrop = Panel6DragDrop
+    OnDragOver = Panel6DragOver
+  end
+  object Panel12: TPanel
+    Left = 296
+    Top = 175
+    Width = 129
+    Height = 65
+    Caption = 'Panel12'
+    ParentBackground = False
+    TabOrder = 18
+    OnDragDrop = Panel6DragDrop
+    OnDragOver = Panel6DragOver
+  end
+  object Panel13: TPanel
+    Left = 160
+    Top = 247
+    Width = 129
+    Height = 65
+    Caption = 'Panel13'
+    ParentBackground = False
+    TabOrder = 19
+    OnDragDrop = Panel7DragDrop
+    OnDragOver = Panel7DragOver
+  end
+  object Panel14: TPanel
+    Left = 296
+    Top = 247
+    Width = 129
+    Height = 65
+    Caption = 'Panel14'
+    ParentBackground = False
+    TabOrder = 20
+    OnDragDrop = Panel7DragDrop
+    OnDragOver = Panel7DragOver
+  end
+  object Panel15: TPanel
+    Left = 159
+    Top = 318
+    Width = 129
+    Height = 65
+    Caption = 'Panel15'
+    ParentBackground = False
+    TabOrder = 21
+    OnDragDrop = Panel8DragDrop
+    OnDragOver = Panel8DragOver
+  end
+  object Panel16: TPanel
+    Left = 296
+    Top = 319
+    Width = 129
+    Height = 65
+    Caption = 'Panel16'
+    ParentBackground = False
+    TabOrder = 22
+    OnDragDrop = Panel8DragDrop
+    OnDragOver = Panel8DragOver
+  end
+  object Panel17: TPanel
+    Left = 142
+    Top = 104
+    Width = 11
+    Height = 281
+    TabOrder = 23
+  end
+  object ScrollBar3: TScrollBar
+    Left = 160
+    Top = 391
+    Width = 265
+    Height = 17
+    Max = 3
+    PageSize = 0
+    TabOrder = 24
+    OnChange = ScrollBar3Change
+  end
+  object HTTP: TIdHTTP
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 616
+    Top = 8
+  end
+end

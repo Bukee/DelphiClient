@@ -67,11 +67,12 @@ var massage:string;
 
 
 begin
+ TestClientForm.Timer1.Enabled:=true;
    StringGrid1.MouseToCell(X, Y, ACol, ARow);
    id:= StringGrid1.Cells[ACol,ARow];
    name := StringGrid1.Cells[ACol + 1,ARow];
    price:= StringGrid1.Cells[ACol + 2,ARow];
-   if New then begin New:= false ;close();end;
+   if New then begin New:= false ; TestClientForm.Timer1.Enabled:=false; close();end;
 end;
 
 end.

@@ -15,6 +15,8 @@ type
     Edit2: TEdit;
     IPAdrees: TEdit;
     procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,10 +34,21 @@ uses TestClientUnit;
 
 procedure TForm7.Button1Click(Sender: TObject);
 begin
+TestClientForm.Timer1.Enabled:=true;
 Hide();
 TestClientForm.ShowModal();
 close();
 
+end;
+
+procedure TForm7.FormCreate(Sender: TObject);
+begin
+ //TestClientForm.Timer1.Enabled:=false;
+end;
+
+procedure TForm7.FormShow(Sender: TObject);
+begin
+ TestClientForm.Timer1.Enabled:=false;
 end;
 
 end.

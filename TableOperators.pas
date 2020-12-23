@@ -75,7 +75,7 @@ procedure TForm9.operatorsOR(Sender: TObject; Button: TMouseButton;
 
 
 begin
-
+   TestClientForm.Timer1.Enabled:=true;
    StringGrid1.MouseToCell(X, Y, ACol, ARow);
    massage := StringGrid1.Cells[ACol,ARow];
    if Acol = 1 then if massage <> ''  then id1:= mI(massage);

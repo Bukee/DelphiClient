@@ -4,8 +4,8 @@ object TestClientForm: TTestClientForm
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = #1050#1083#1080#1077#1085#1090' '#1076#1083#1103' '#1090#1077#1089#1090#1086#1074
-  ClientHeight = 552
-  ClientWidth = 1023
+  ClientHeight = 499
+  ClientWidth = 1151
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,27 +19,29 @@ object TestClientForm: TTestClientForm
   TextHeight = 13
   object ResponseMemo: TMemo
     Left = 0
-    Top = 432
-    Width = 1023
-    Height = 120
+    Top = 483
+    Width = 1151
+    Height = 16
     Align = alBottom
     TabOrder = 0
+    Visible = False
   end
   object RequestMemo: TMemo
     Left = 0
-    Top = 327
-    Width = 1023
-    Height = 105
+    Top = 459
+    Width = 1151
+    Height = 24
     Align = alBottom
     TabOrder = 1
+    Visible = False
     OnDragDrop = RequestMemoDragDrop
     OnDragOver = RequestMemoDragOver
   end
   object StringGrid1: TStringGrid
     Left = 8
     Top = 8
-    Width = 481
-    Height = 313
+    Width = 561
+    Height = 481
     TabOrder = 2
     OnMouseUp = StringGrid1MouseUp
     RowHeights = (
@@ -50,10 +52,10 @@ object TestClientForm: TTestClientForm
       24)
   end
   object StringGrid2: TStringGrid
-    Left = 512
+    Left = 584
     Top = 8
-    Width = 503
-    Height = 313
+    Width = 559
+    Height = 481
     ScrollBars = ssVertical
     TabOrder = 3
     OnMouseUp = StringGrid2MouseUp
@@ -74,7 +76,7 @@ object TestClientForm: TTestClientForm
     Left = 8
   end
   object MainMenu1: TMainMenu
-    Left = 48
+    Left = 56
     object N1: TMenuItem
       Caption = #1054#1073#1085#1086#1074#1080#1090#1100
       OnClick = N1Click
@@ -89,11 +91,15 @@ object TestClientForm: TTestClientForm
         Caption = #1058#1086#1074#1072#1088#1086#1074
         OnClick = MenuProductRun
       end
+      object N4: TMenuItem
+        Caption = #1047#1072#1074#1077#1088#1096#1077#1085#1099#1077' '#1079#1072#1082#1072#1079#1099
+        OnClick = openOrder
+      end
     end
   end
   object Timer1: TTimer
     OnTimer = Timer
-    Left = 488
+    Left = 568
     Top = 8
   end
 end

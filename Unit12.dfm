@@ -16,16 +16,16 @@ object Form12: TForm12
   object Label1: TLabel
     Left = 56
     Top = 38
-    Width = 49
-    Height = 26
-    Caption = 'Label1'
+    Width = 58
+    Height = 13
+    Caption = #1048#1084#1103' '#1090#1086#1074#1072#1088#1072
   end
   object Label2: TLabel
     Left = 56
     Top = 97
-    Width = 41
-    Height = 17
-    Caption = 'Label2'
+    Width = 26
+    Height = 13
+    Caption = #1062#1077#1085#1072
   end
   object Edit1: TEdit
     Left = 24
@@ -46,7 +46,7 @@ object Form12: TForm12
     Top = 64
     Width = 129
     Height = 81
-    Caption = 'Button1'
+    Caption = #1054#1050
     TabOrder = 2
     OnClick = Button1Click
   end

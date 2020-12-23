@@ -27,21 +27,29 @@
     <File Path="tableProduct.dfm"/>
     <File Path="Unit12.pas"/>
     <File Path="Unit12.dfm"/>
+    <File Path="Unit13.pas"/>
+    <File Path="Unit13.dfm"/>
+    <File Path="tableO.pas"/>
+    <File Path="tableO.dfm"/>
   </ProjectSortOrder>
 	<BT_BuildType>Debug</BT_BuildType>
 	<Transactions>
     <Transaction>1899.12.30 00:00:00.000.538,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit8.dfm=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\TableC.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.965,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit11.dfm=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\tableProduct.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.677,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit9.dfm=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\TableOperators.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.713,=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit12.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.112,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit14.dfm=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\tableO.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.777,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit10.dfm=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\TableOrdersInfo.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.112,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit14.pas=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\tableO.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.958,=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit14.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.927,=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit13.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.517,=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit11.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.965,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit11.pas=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\tableProduct.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.677,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit9.pas=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\TableOperators.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.044,=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit9.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.965,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit11.dfm=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\tableProduct.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.517,=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit11.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.965,=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit8.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.538,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit8.pas=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\TableC.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.777,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit10.pas=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\TableOrdersInfo.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.749,=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit10.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.677,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit9.dfm=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\TableOperators.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.777,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit10.dfm=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\TableOrdersInfo.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.538,C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit8.pas=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\TableC.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.965,=C:\Users\YA\Desktop\delpih\Delphi-4-kurs-master\test-client — копия\Unit8.pas</Transaction>
   </Transactions>
 </BorlandProject>
